@@ -1,4 +1,4 @@
-#Example: 
+"""#Example: 
 
 eggs = (1,3,8,3,2)
 
@@ -6,45 +6,58 @@ my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
 
+
 #Insert here the module/library import statements 
 
-
-
+import random
+import math
+import os
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+q = range(20)
+square = [e**2 for e in q]
+print(square[:20])
 
 
 
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
-
+q2 = range(50)
+power_of_two = [e**2 for e in q2]
+print(power_of_two)
 
 
 
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
-
-
-
+q3 = range(100)
+sqrt = [math.sqrt(e) for e in q3 ]
+print(sqrt[:100])
 
 #4. Create this list [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]. Use my_list as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+my_list = [e for e in range(-10,1)]
+print(my_list)
 
 
 
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
-
+odds = [e for e in range(100) if e % 2 == True]
+print(odds)
 
 
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+
+divisible_by_seven = [e for e in range(1,1000) if e % 7 == 0]
+print(divisible_by_seven)
 
 
 
@@ -54,6 +67,9 @@ print(my_listComprehension)
 
 teststring = 'Find all of the words in a string that are monosyllabic'
 
+non_vowels = [e for e in teststring if e not in ("a","e","i","o","u")]
+print[non_vowels])
+
 
 
 
@@ -61,13 +77,18 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
+sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
+capital_letters = [e for e in sentence if e.isupper()==True]
+print(capital_letters)
 
 
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
-
+sentence = 'The quick brown fox jumped over the lazy dog'
+consonants = [e for e in sentence if e is not ("a","e","i","o","u")]
+print(consonants)
 
 
 
@@ -75,14 +96,18 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
-
+path = "/../../.."
+dirs = os.listdir(path)
+files = [folders for folders in dirs]
+print(files)
 
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
-
-
+import random
+random_lists = [[random.randint(0,100) for e in range(10)]for e in range(4)]
+print(random_lists)
 
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
@@ -90,6 +115,8 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 
+flatten_list = [k for e in list_of_lists for k in e]
+print(flatten_list)
 
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
@@ -99,16 +126,21 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
-
-
+floats = [float(k)for e in list_of_lists for k in e]
+print(floats)
+"""
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
 
-for i in ['a','b','c']:
-    print i**2
+try:
+    for i in ['a','b','c']:
+        print(i**2)
+except Exception as e:
+    print('bye')
 
 
+"""
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
@@ -179,13 +211,14 @@ def linux_interaction():
 # Use results as the name of the list 
 
 
-
-
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+Num_of_Sections = int(input("Enter Num of Sections: ")) 
+
+"""
+
 
 
