@@ -128,7 +128,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 
 floats = [float(k)for e in list_of_lists for k in e]
 print(floats)
-"""
+
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
@@ -140,51 +140,69 @@ except Exception as e:
     print('bye')
 
 
-"""
+
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
-
-x = 5
-y = 0
-
-z = x/y
+try: 
+    x = 5
+    y = 0
+    z = x/y
+    print('bien')
+except Exception as e:
+    print(ZeroDivisionError: division by zero)
 
 
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
+try:
+    abc=[10,20,20]
+    print(abc[3])
+except Exception as e:
+    print("You are calling a number out of the index range.")
 
-abc=[10,20,20]
-print(abc[3])
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+try:
+    edad: input('edad')
+    edad_madre: input('edad_madre')
+    print(edad/edad_madre)
+except Exception as e:
+    print('Oops: introduce an number')
 
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
+try:
+    f = open('testfile','r')
+    f.write('Test write this')
+    print(f)
+except Exception as e:
+    print('Could not open that file')
 
-f = open('testfile','r')
-f.write('Test write this')
-
+"""
 
 
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-fp = open('myfile.txt')
-    line = f.readline()
-    i = int(s.strip())
+try:
 
+    fp = open('myfile.txt')
+        line = f.readline()
+        i = int(s.strip())
+except (FileNotFoundError):
+    print("File not found")
 
-
+"""
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
