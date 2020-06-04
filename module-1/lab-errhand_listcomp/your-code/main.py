@@ -12,6 +12,7 @@ print(my_listComprehension)
 import random
 import math
 import os
+import sys
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -187,7 +188,7 @@ try:
 except Exception as e:
     print('Could not open that file')
 
-"""
+
 
 
 
@@ -202,17 +203,20 @@ try:
 except (FileNotFoundError):
     print("File not found")
 
-"""
+
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
-
+try:
 def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
+except Exception as e:
+    print('"Function can only run on Linux systems."')
 
+"""
 
 # Bonus Questions:
 
@@ -222,16 +226,26 @@ def linux_interaction():
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+while True:
+    try:
+        x: int(input('numero'))
+        print(math.sqrt(x))
+    except Exception as e:
+        print('You have to introduce a number')
 
 
+
+"""
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
-
+results = [[[e for e in range(1001)]for _ in range(2,9)] if e % _ == True]
+print(results)
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
+
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: ")) 
