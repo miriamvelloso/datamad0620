@@ -46,7 +46,7 @@ class Saxon(Soldier):
         
     def receiveDamage(self,damage):
         self.health - damage
-         if Saxon.health != 0:
+        if Saxon.health > 0:
             return f "A Saxon has received {self.damage} points of damage"
         else:
             return f "A Saxon has died in combat"
@@ -90,7 +90,7 @@ class War:
             return "Vikings have won the war of the century!"
         elif len(self.vikingArmy) == 0:
             return "Saxons have fought for their lives and survive another day..."
-        elif len(self.saxonArmy) != 0 or len(sefl.vikingArmy) != 0:
+        else:
             return "Vikings and Saxons are still in the thick of battle."
     
 
