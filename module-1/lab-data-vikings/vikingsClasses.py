@@ -43,8 +43,6 @@ class Viking(Soldier):
 class Saxon(Soldier):
         def __init__(self):
             super().__init__(health,strength)
-            self.health = health
-            self.strength = strength
         
         def receiveDamage(self,damage):
             self.health - damage
@@ -81,7 +79,7 @@ class War:
     def saxonAttack(self):
         ranviking = random.choice(self.vikingArmy)
         ransaxon = random.choice(self.SaxonArmy)
-        self.Saxon.receiveDamage = self.strength.Saxon
+        self.Viking.receiveDamage = self.strength.Saxon
         if self.health.saxon == 0:
             self.saxonArmy = self.saxonArmy -1
         return f"{ransaxon} has received {ranviking} points of damage"
